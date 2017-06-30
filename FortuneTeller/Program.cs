@@ -96,7 +96,7 @@ namespace FortuneTeller
             {
                 Console.WriteLine("with $0 in the bank, ");
             }
-            //Depending on the number of user's siblings will determine the location
+            //The number of the user's siblings will determine the location
             //of their vacation home
 
             if (userSiblings == 0)
