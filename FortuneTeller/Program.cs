@@ -38,6 +38,11 @@ namespace FortuneTeller
             Console.WriteLine("What is your birth month? Please enter the 2 digit month, not the name.");
             int userBirthMonth = int.Parse(Console.ReadLine());
 
+            if(userBirthMonth > 12 || userBirthMonth < 1)
+            {
+                Console.WriteLine("You know there are only 12 months in a year.");
+            }
+
             Console.WriteLine("What is your favorite \"ROYGBIV\" color?  If you are not familiar " +
                 "with the term \"ROYGBIV\" please type \"Help\".");
             string userFavColor = Console.ReadLine();
@@ -61,41 +66,90 @@ namespace FortuneTeller
             //the fortunes of the user is multiple areas of their life
 
             //If the users age is even they will retire in 20 years if odd then 30 years
-            int yearsToRetireEven = 20;
-            int yearsToRetireOdd = 30;
 
+            Console.Write(firstName + " " + lastName + " will retire in ");
             if (userAge % 2 == 0)
             {
-                Console.WriteLine("You will retire in " + yearsToRetireEven + " years");
+                Console.Write("20 years "); 
             }
             else
             {
-                Console.WriteLine("You will retire in " + yearsToRetireOdd + " years");
+                Console.Write("30 years ");
             }
-            //Depending on the number of siblings will determine the location
+
+            //This part is to use the user's birth month to determine the amount
+            //of money the user has in the bank
+
+            if (userBirthMonth > 1 && userBirthMonth <= 4)
+            {
+                Console.Write("with $1.00 in the bank, ");
+            }
+            else if (userBirthMonth > 4 && userBirthMonth <= 8)
+            {
+                Console.Write("with $1,293,485.67 in the bank,");
+            }
+            else if (userBirthMonth > 8 && userBirthMonth <= 12)
+            {
+                Console.Write("with $.32 in the bank, ");
+            }
+            else
+            {
+                Console.WriteLine("with $0 in the bank, ");
+            }
+            //Depending on the number of user's siblings will determine the location
             //of their vacation home
 
-            if(userSiblings == 0)
+            if (userSiblings == 0)
             {
-                Console.WriteLine("Your vacation home will be in Heavenly Hawaii!");
+                Console.Write("a vacation home in Heavenly Hawaii ");
             }
             else if(userSiblings == 1)
             {
-                Console.WriteLine("Your vacation home will be in Fabulous Fiji!");
+                Console.Write("a vacation home in Fabulous Fiji ");
             }
             else if(userSiblings == 2)
             {
-                Console.WriteLine("Your vacation home will be in Terrific Toronto!");
+                Console.Write("a vacation home in Terrific Toronto ");
             }
             else if(userSiblings == 3)
             {
-                Console.WriteLine("Your vacation home will be in Lovely Los Cabos!");
+                Console.Write("a vacation home in Lovely Los Cabos ");
             }
             else
             {
-                Console.WriteLine("Your vacation home will be in an Insane Asylum!");
+                Console.Write("a vacation home in an Insane Asylum ");
             }
 
+            //The color selected will determine the user's transportation
+
+            switch (lowerCaseUserFavColor)
+            {
+                case "red":
+                    Console.Write("and a sports car.");
+                    break;
+                case "orange":
+                    Console.Write("and a skateboard.\n");
+                    break;
+                case "yellow":
+                    Console.Write("is a banana seat bike.\n");
+                    break;
+                case "green":
+                    Console.Write("is a Honda Prius.\n");
+                    break;
+                case "blue":
+                    Console.Write("is an airplane.\n");
+                    break;
+                case "Indigo":
+                    Console.Write("is a helicopter.\n");
+                    break;
+                case "Violet":
+                    Console.Write("is horse and buggy.\n");
+                    break;
+                default:
+                    Console.Write("and you do not have any transportation.\n");
+                    break;                
+            }
+            Console.WriteLine();
         }
     }
 }
