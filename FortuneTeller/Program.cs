@@ -47,12 +47,14 @@ namespace FortuneTeller
                 "with the term \"ROYGBIV\" please type \"Help\".");
             string userFavColor = Console.ReadLine();
             string lowerCaseUserFavColor = userFavColor.ToLower();
-
+            
             //This if statement is for if the user types in the word "help".
-            if (lowerCaseUserFavColor == "help")
+            if (lowerCaseUserFavColor.ToLower() == "help")
             {
                 Console.WriteLine("The following colors are \"ROYGBIV\" colors: ");
                 Console.WriteLine("Red, Orange, Yellow, Green, Blue, Indigo, Violet.");
+                Console.WriteLine("Please enter one of these colors.");
+                userFavColor = Console.ReadLine();
             }
 
             Console.WriteLine("How many siblings do you have?");
