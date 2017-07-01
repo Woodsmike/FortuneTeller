@@ -255,7 +255,7 @@ namespace FortuneTeller
 
             if (userBirthMonth > 1 && userBirthMonth <= 4)
             {
-                Console.Write("with $1.00 in the bank, ");
+                Console.Write("with $1,875,043.10 in the bank, ");
             }
             else if (userBirthMonth > 4 && userBirthMonth <= 8)
             {
@@ -319,7 +319,7 @@ namespace FortuneTeller
                     Console.Write("and a helicopter.\n");
                     break;
                 case "violet":
-                    Console.Write("and a horse and buggy.\n");
+                    Console.Write("and a Mini Cooper.\n");
                     break;
                 default:
                     Console.Write("and you do not have any transportation.\n");
