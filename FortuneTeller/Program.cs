@@ -22,12 +22,19 @@ namespace FortuneTeller
             Console.WriteLine("All that I need from you is six personal facts. These must be " +
                 "true, because I can tell if you are lying!");
             Console.WriteLine();
+
+            //set up a variable of quitter for later use
             string quitter = "Nobody likes a quitter...";
 
+            //for all the user inputs, except for age and birth month, I changed the string
+            //variable to one that is in all lowercase letters.  This is so the user's input
+            //will not be case sensitive throughout the application.
             Console.WriteLine("To begin, What is your first name?");
             string firstName = Console.ReadLine();
             string lowerCaseFirstName = firstName.ToLower();
 
+            //I used the following if statement at every location where the user has the 
+            //opportunity to type in a value.  I also used the variable quitter.
             if(lowerCaseFirstName == "quit")
             {
                 Console.WriteLine(quitter);
@@ -54,6 +61,10 @@ namespace FortuneTeller
                 Console.WriteLine(quitter);
                 Environment.Exit(0);
             }
+            //for the age variable, I converted the string variable 'userAgeString'
+            //into an int variable 'userAge'.
+            //**As an extra I used the if statment, while and do while loops to have
+            //the user input a viable age.
             int userAge;
             userAge = Convert.ToInt32(userAgeString);
 
@@ -87,6 +98,10 @@ namespace FortuneTeller
                 Console.WriteLine(quitter);
                 Environment.Exit(0);
             }
+            //for the birth month variable, I converted the string variable 
+            //'userBirthMonthString' into an int variable 'userBirhtMonth'.
+            //**As an extra I used the if statement, while and do while loops to 
+            //have the user input a viable age.
             int userBirthMonth;
             userBirthMonth = Convert.ToInt32(userBirthMonthString);
 
@@ -123,6 +138,10 @@ namespace FortuneTeller
                 Environment.Exit(0);
             }
 
+            //In this section I wanted the user to give a correct answer for color before
+            //moving on to the last question.  In order to do that, I needed to use a while
+            //loop to catch any string that did not match the colors and the word "help". 
+            //The correct operator is the && sign.
             while (lowerCaseUserFavColor != "red" && lowerCaseUserFavColor != "orange" &&
                 lowerCaseUserFavColor != "yellow" && lowerCaseUserFavColor != "green" &&
                 lowerCaseUserFavColor != "blue" && lowerCaseUserFavColor != "indigo" &&
@@ -138,6 +157,10 @@ namespace FortuneTeller
                     Environment.Exit(0);
                 }
 
+                //If the user did not enter a correct color or know what ROYGBIV means,
+                //they would have the chance to type help.  I displayed the options of the
+                //colors available.  If the user enters "help" again, the program takes
+                //him to the next while, if, while section.
                 if (lowerCaseUserFavColor.ToLower() == "help")
                 {
                     Console.WriteLine("The following colors are \"ROYGBIV\" colors: ");
@@ -153,6 +176,10 @@ namespace FortuneTeller
                     }
                 }
             }
+
+            //I had to add this section because the first while section let the user
+            //enter "help" which would break out of the previous loop.  Thus, I had to
+            //create a loop just for the "help" string.
             if (lowerCaseUserFavColor.ToLower() == "help")
             {
                 Console.WriteLine("The following colors are \"ROYGBIV\" colors: ");
@@ -187,6 +214,7 @@ namespace FortuneTeller
                 Console.WriteLine(quitter);
                 Environment.Exit(0);
             }
+            
             int userSiblings;
             userSiblings = Convert.ToInt32(userSiblingsString);
 
@@ -196,10 +224,16 @@ namespace FortuneTeller
                 "I will tell your fortune momentarily. \n\n\n");
 
             //The second section is where I take the users information and determine
-            //the fortunes of the user is multiple areas of their life
+            //the fortunes of the user in multiple areas of their life.
 
-            //If the users age is even they will retire in 20 years if odd then 30 years
+            //Part 3 required to print a line of code back to the console.  I used
+            //Console.Write() which concatenated each area that I needed to print on 
+            //one line in the correct order.  I could have used variables and referenced 
+            //the variables on a Console.WriteLine(). 
 
+            //If the users age is even they will retire in 20 years if odd then 30 years.
+            //I used the remainder operator to determine whether or not the user has
+            //lived an even or odd number of years.
             Console.Write(firstName + " " + lastName + " will retire in ");
 
             if (userAge % 2 == 0)
@@ -212,7 +246,8 @@ namespace FortuneTeller
             }
 
             //This part is to use the user's birth month to determine the amount
-            //of money the user has in the bank
+            //of money the user has in the bank.  I used a if, else if condition because
+            //I am determining what range the user's birth month falls.
 
             if (userBirthMonth > 1 && userBirthMonth <= 4)
             {
@@ -231,7 +266,8 @@ namespace FortuneTeller
                 Console.WriteLine("with $0 in the bank, ");
             }
             //The number of the user's siblings will determine the location
-            //of their vacation home
+            //of their vacation home.   I used an if, else if condition here. 
+            //I just as well could have used a switch statement here.
 
             if (userSiblings == 0)
             {
@@ -255,7 +291,9 @@ namespace FortuneTeller
             }
 
             //The color selected will determine the user's transportation
-
+            //After determining the user's favorite color, I needed to determine
+            //what type of transportation they have.  Also to mix things up, I used
+            //the switch statement here.
             switch (lowerCaseUserFavColor)
             {
                 case "red":
