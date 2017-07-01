@@ -76,6 +76,7 @@ namespace FortuneTeller
                     {
                         Console.WriteLine();
                         Console.WriteLine("Your age has to be greater than zero \"0\".");
+                        Console.WriteLine("Please enter in your true age.");
                     } while (!int.TryParse(Console.ReadLine(), out userAge));
                 }
 
@@ -85,12 +86,13 @@ namespace FortuneTeller
                     {
                         Console.WriteLine();
                         Console.WriteLine("Are you sure?!? Most people do not live past 120.");
+                        Console.WriteLine("Please enter in your true age.");
                     } while (!int.TryParse(Console.ReadLine(), out userAge));
                 }
             }
 
             Console.WriteLine();
-            Console.WriteLine("What is your birth month? Please enter the 2 digit month, not the name.");
+            Console.WriteLine("What is your 2 digit birth month ... NOT the name.");
             string userBirthMonthString = Console.ReadLine();
 
             if (userBirthMonthString == "quit")
@@ -101,7 +103,7 @@ namespace FortuneTeller
             //for the birth month variable, I converted the string variable 
             //'userBirthMonthString' into an int variable 'userBirhtMonth'.
             //**As an extra I used the if statement, while and do while loops to 
-            //have the user input a viable age.
+            //have the user input a viable birth month.
             int userBirthMonth;
             userBirthMonth = Convert.ToInt32(userBirthMonthString);
 
@@ -113,6 +115,7 @@ namespace FortuneTeller
                     {
                         Console.WriteLine();
                         Console.WriteLine("You know there are only 12 months in a year?!?!");
+                        Console.WriteLine("Please enter in a birth month between 1 - 12.");
                     } while (!int.TryParse(Console.ReadLine(), out userBirthMonth));
                 }
 
@@ -122,6 +125,7 @@ namespace FortuneTeller
                     {
                         Console.WriteLine();
                         Console.WriteLine("Come on! What IS a negative month?.");
+                        Console.WriteLine("Please enter in a birth month between 1 - 12.");
                     } while (!int.TryParse(Console.ReadLine(), out userBirthMonth));
                 }
             }
@@ -179,7 +183,7 @@ namespace FortuneTeller
 
             //I had to add this section because the first while section let the user
             //enter "help" which would break out of the previous loop.  Thus, I had to
-            //create a loop just for the "help" string.
+            //create a loop if the "help" string was entered a second time.
             if (lowerCaseUserFavColor.ToLower() == "help")
             {
                 Console.WriteLine("The following colors are \"ROYGBIV\" colors: ");
@@ -191,7 +195,7 @@ namespace FortuneTeller
                 while (lowerCaseUserFavColor != "red" && lowerCaseUserFavColor != "orange" &&
                 lowerCaseUserFavColor != "yellow" && lowerCaseUserFavColor != "green" &&
                 lowerCaseUserFavColor != "blue" && lowerCaseUserFavColor != "indigo" &&
-                lowerCaseUserFavColor != "violet" && lowerCaseUserFavColor != "help")
+                lowerCaseUserFavColor != "violet")
                 {
                     Console.WriteLine("Please enter the a correct color.");
                     userFavColor = Console.ReadLine();
@@ -246,7 +250,7 @@ namespace FortuneTeller
             }
 
             //This part is to use the user's birth month to determine the amount
-            //of money the user has in the bank.  I used a if, else if condition because
+            //of money the user has in the bank.  I used an if, else if condition because
             //I am determining what range the user's birth month falls.
 
             if (userBirthMonth > 1 && userBirthMonth <= 4)
@@ -322,7 +326,7 @@ namespace FortuneTeller
                     break;
             }
             Console.WriteLine();
-            Console.WriteLine("________________");
+            Console.WriteLine("_______________________________");
         }
     }        
 }
