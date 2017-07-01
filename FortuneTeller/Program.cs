@@ -55,7 +55,6 @@ namespace FortuneTeller
                 Environment.Exit(0);
             }
             int userAge;
-
             userAge = Convert.ToInt32(userAgeString);
 
             while (userAge <= 0 || userAge > 120)
@@ -68,6 +67,7 @@ namespace FortuneTeller
                         Console.WriteLine("Your age has to be greater than zero \"0\".");
                     } while (!int.TryParse(Console.ReadLine(), out userAge));
                 }
+
                 if (userAge > 120)
                 {
                     do
@@ -97,15 +97,16 @@ namespace FortuneTeller
                     do
                     {
                         Console.WriteLine();
-                        Console.WriteLine("You know there are only 12 months in a year.");
+                        Console.WriteLine("You know there are only 12 months in a year?!?!");
                     } while (!int.TryParse(Console.ReadLine(), out userBirthMonth));
                 }
+
                 if (userBirthMonth > 12 || userBirthMonth < 1)
                 {
                     do
                     {
                         Console.WriteLine();
-                        Console.WriteLine("Come on! What is a negative month?.");
+                        Console.WriteLine("Come on! What IS a negative month?.");
                     } while (!int.TryParse(Console.ReadLine(), out userBirthMonth));
                 }
             }
@@ -115,6 +116,7 @@ namespace FortuneTeller
             "with the term \"ROYGBIV\" please type \"Help\".");
             string userFavColor = Console.ReadLine();
             string lowerCaseUserFavColor = userFavColor.ToLower();
+
             if (lowerCaseUserFavColor == "quit")
             {
                 Console.WriteLine(quitter);
@@ -135,6 +137,7 @@ namespace FortuneTeller
                     Console.WriteLine(quitter);
                     Environment.Exit(0);
                 }
+
                 if (lowerCaseUserFavColor.ToLower() == "help")
                 {
                     Console.WriteLine("The following colors are \"ROYGBIV\" colors: ");
@@ -166,6 +169,7 @@ namespace FortuneTeller
                     Console.WriteLine("Please enter the a correct color.");
                     userFavColor = Console.ReadLine();
                     lowerCaseUserFavColor = userFavColor.ToLower();
+
                     if (lowerCaseUserFavColor == "quit")
                     {
                         Console.WriteLine(quitter);
@@ -197,6 +201,7 @@ namespace FortuneTeller
             //If the users age is even they will retire in 20 years if odd then 30 years
 
             Console.Write(firstName + " " + lastName + " will retire in ");
+
             if (userAge % 2 == 0)
             {
                 Console.Write("20 years ");
