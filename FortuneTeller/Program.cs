@@ -123,7 +123,7 @@ namespace FortuneTeller
 
             while (lowerCaseUserFavColor != "red" && lowerCaseUserFavColor != "orange" &&
                 lowerCaseUserFavColor != "yellow" && lowerCaseUserFavColor != "green" &&
-                lowerCaseUserFavColor != "blue" && lowerCaseUserFavColor != "indigo" && 
+                lowerCaseUserFavColor != "blue" && lowerCaseUserFavColor != "indigo" &&
                 lowerCaseUserFavColor != "violet" && lowerCaseUserFavColor != "help")
             {
                 Console.WriteLine("Please enter a \"ROYGBIV\" color or enter \"Help\".");
@@ -149,12 +149,6 @@ namespace FortuneTeller
                         Environment.Exit(0);
                     }
                 }
-
-            }
-            if (lowerCaseUserFavColor == "quit")
-            {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
             }
             if (lowerCaseUserFavColor.ToLower() == "help")
             {
