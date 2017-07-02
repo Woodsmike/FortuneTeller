@@ -23,7 +23,7 @@ namespace FortuneTeller
                 "true, because I can tell if you are lying!");
             Console.WriteLine();
 
-            //set up a variable of quitter for later use
+            //set up a string variable to print at every location an user would type quit.
             string quitter = "Nobody likes a quitter...";
 
             //for all the user inputs, except for age and birth month, I changed the string
@@ -289,9 +289,13 @@ namespace FortuneTeller
             {
                 Console.Write("a vacation home in lovely Los Cabos, Mexico ");
             }
-            else
+            else if(userSiblings < 0)
             {
                 Console.Write("a vacation home in a foreign Insane Asylum ");
+            }
+            else
+            {
+                Console.Write("a 74' Princess 72 yacht ");
             }
 
             //The color selected will determine the user's transportation
