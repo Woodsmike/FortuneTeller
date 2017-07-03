@@ -23,9 +23,7 @@ namespace FortuneTeller
                 "true, because I can tell if you are lying!");
             Console.WriteLine();
 
-            //set up a string variable to print at every location an user would type quit.
-            string quitter = "Nobody likes a quitter...";
-
+            
             //for all the user inputs, except for age and birth month, I changed the string
             //variable to one that is in all lowercase letters.  This is so the user's input
             //will not be case sensitive throughout the application.
@@ -34,11 +32,12 @@ namespace FortuneTeller
             string lowerCaseFirstName = firstName.ToLower();
 
             //I used the following if statement at every location where the user has the 
-            //opportunity to type in a value.  I also used the variable quitter.
+            //opportunity to type in a value.  I also created a new method named "Quitter"
+            //The new method prints the message "Nobody likes a quitter..."  And then 
+            //exits the program.
             if(lowerCaseFirstName == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
 
             Console.WriteLine();
@@ -48,8 +47,7 @@ namespace FortuneTeller
 
             if (lowerCaseLastName == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
 
             Console.WriteLine();
@@ -58,8 +56,7 @@ namespace FortuneTeller
 
             if (userAgeString == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
             //for the age variable, I converted the string variable 'userAgeString'
             //into an int variable 'userAge'.
@@ -97,8 +94,7 @@ namespace FortuneTeller
 
             if (userBirthMonthString == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
             //for the birth month variable, I converted the string variable 
             //'userBirthMonthString' into an int variable 'userBirhtMonth'.
@@ -138,8 +134,7 @@ namespace FortuneTeller
 
             if (lowerCaseUserFavColor == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
 
             //In this section I wanted the user to give a correct answer for color before
@@ -157,8 +152,7 @@ namespace FortuneTeller
 
                 if (lowerCaseUserFavColor == "quit")
                 {
-                    Console.WriteLine(quitter);
-                    Environment.Exit(0);
+                    Quitter();
                 }
 
                 //If the user did not enter a correct color or know what ROYGBIV means,
@@ -175,8 +169,7 @@ namespace FortuneTeller
 
                     if (lowerCaseUserFavColor == "quit")
                     {
-                        Console.WriteLine(quitter);
-                        Environment.Exit(0);
+                        Quitter();
                     }
                 }
             }
@@ -203,8 +196,7 @@ namespace FortuneTeller
 
                     if (lowerCaseUserFavColor == "quit")
                     {
-                        Console.WriteLine(quitter);
-                        Environment.Exit(0);
+                        Quitter();
                     }
                 }
             }
@@ -215,8 +207,7 @@ namespace FortuneTeller
 
             if (userSiblingsString == "quit")
             {
-                Console.WriteLine(quitter);
-                Environment.Exit(0);
+                Quitter();
             }
             
             int userSiblings;
@@ -332,6 +323,12 @@ namespace FortuneTeller
             Console.WriteLine();
             Console.WriteLine("_______________________________");
         }
-    }        
+        public static void Quitter()
+        {
+            Console.WriteLine("Nobody likes a quitter...");
+            Environment.Exit(0);
+            return;
+        }
+    }
 }
 
