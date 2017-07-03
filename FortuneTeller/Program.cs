@@ -115,7 +115,7 @@ namespace FortuneTeller
                     } while (!int.TryParse(Console.ReadLine(), out userBirthMonth));
                 }
 
-                if (userBirthMonth > 12 || userBirthMonth < 1)
+                if (userBirthMonth < 0)
                 {
                     do
                     {
@@ -244,7 +244,7 @@ namespace FortuneTeller
             //of money the user has in the bank.  I used an if, else if condition because
             //I am determining what range the user's birth month falls.
 
-            if (userBirthMonth > 1 && userBirthMonth <= 4)
+            if (userBirthMonth >= 1 && userBirthMonth <= 4)
             {
                 Console.Write("with $1,875,043.10 in the bank, ");
             }
