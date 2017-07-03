@@ -53,8 +53,9 @@ namespace FortuneTeller
             Console.WriteLine();
             Console.WriteLine("What is your age? Ladies, your age will not be disclosed.");
             string userAgeString = Console.ReadLine();
+            string lowerCaseUserAge = userAgeString.ToLower();
 
-            if (userAgeString == "quit")
+            if (lowerCaseUserAge == "quit")
             {
                 Quitter();
             }
@@ -91,8 +92,9 @@ namespace FortuneTeller
             Console.WriteLine();
             Console.WriteLine("What is your 2 digit birth month ... NOT the name.");
             string userBirthMonthString = Console.ReadLine();
+            string lowerCaseUserBirthMonth = userBirthMonthString.ToLower();
 
-            if (userBirthMonthString == "quit")
+            if (lowerCaseUserBirthMonth == "quit")
             {
                 Quitter();
             }
