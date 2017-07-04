@@ -320,11 +320,14 @@ namespace FortuneTeller
             }
             Console.WriteLine();
            
-
+            //for part 3, I printed the below line by using the variables defined above.
             Console.WriteLine(firstName + " " + lastName + " will retire in " + userAgeString +
             " with " + amountOfMoney + " in the bank, a vacation home in " + vacationLocation +
             "and a " + transportation );
             Console.WriteLine("_______________________________");
+
+            //for an extra, I created a new method to put inside the if statements for 
+            //printing 'nobody likes a quitter..." and exiting the program
         }
         public static void Quitter()
         {
