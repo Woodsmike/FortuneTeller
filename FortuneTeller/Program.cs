@@ -279,11 +279,11 @@ namespace FortuneTeller
             }
             else if(userSiblings > 3)
             {
-                vacationLocation = "a foreign Insane Asylum ";
+                vacationLocation = "Greece ";
             }
             else
             {
-                vacationLocation = "a 74' Princess 72 yacht ";
+                vacationLocation = "a foreign Insane Asylum ";
             }
 
             //The color selected will determine the user's transportation
@@ -327,7 +327,7 @@ namespace FortuneTeller
             Console.WriteLine("_______________________________");
 
             //for an extra, I created a new method to put inside the if statements for 
-            //printing 'nobody likes a quitter..." and exiting the program
+            //printing 'nobody likes a quitter..." and exiting the programgit 
         }
         public static void Quitter()
         {
