@@ -223,106 +223,107 @@ namespace FortuneTeller
             //The second section is where I take the users information and determine
             //the fortunes of the user in multiple areas of their life.
 
-            //Part 3 required to print a line of code back to the console.  I used
-            //Console.Write() which concatenated each area that I needed to print on 
-            //one line in the correct order.  I could have used variables and referenced 
-            //the variables on a Console.WriteLine(). 
-
+            
             //If the users age is even they will retire in 20 years if odd then 30 years.
             //I used the remainder operator to determine whether or not the user has
             //lived an even or odd number of years.
-            Console.Write(firstName + " " + lastName + " will retire in ");
-
+            
             if (userAge % 2 == 0)
             {
-                Console.Write("20 years ");
+                userAgeString = "20 years";
             }
             else
             {
-                Console.Write("30 years ");
+                userAgeString = "30 years";
             }
 
             //This part is to use the user's birth month to determine the amount
             //of money the user has in the bank.  I used an if, else if condition because
             //I am determining what range the user's birth month falls.
-
+            string amountOfMoney;
             if (userBirthMonth >= 1 && userBirthMonth <= 4)
             {
-                Console.Write("with $1,875,043.10 in the bank, ");
+                amountOfMoney = "$1,875,043.10";
             }
             else if (userBirthMonth > 4 && userBirthMonth <= 8)
             {
-                Console.Write("with $1,293,485.67 in the bank,");
+                amountOfMoney = "$1,293,485.67";
             }
             else if (userBirthMonth > 8 && userBirthMonth <= 12)
             {
-                Console.Write("with $.32 in the bank, ");
+                amountOfMoney = "$.32";
             }
             else
             {
-                Console.WriteLine("with $0 in the bank, ");
+                amountOfMoney = "$0";
             }
             //The number of the user's siblings will determine the location
             //of their vacation home.   I used an if, else if condition here. 
             //I just as well could have used a switch statement here.
-
+            string vacationLocation;     
             if (userSiblings == 0)
             {
-                Console.Write("a vacation home in Kauai, Hawaii ");
+                vacationLocation = "Kauai, Hawaii ";
             }
             else if (userSiblings == 1)
             {
-                Console.Write("a vacation home in fabulous Viti Levu, Fiji ");
+                vacationLocation = "fabulous Viti Levu, Fiji";
             }
             else if (userSiblings == 2)
             {
-                Console.Write("a vacation home in terrific Toronto, Canada ");
+                vacationLocation = "terrific Toronto, Canada ";
             }
             else if (userSiblings == 3)
             {
-                Console.Write("a vacation home in lovely Los Cabos, Mexico ");
+                vacationLocation = "lovely Los Cabos, Mexico ";
             }
-            else if(userSiblings < 0)
+            else if(userSiblings > 3)
             {
-                Console.Write("a vacation home in a foreign Insane Asylum ");
+                vacationLocation = "a foreign Insane Asylum ";
             }
             else
             {
-                Console.Write("a 74' Princess 72 yacht ");
+                vacationLocation = "a 74' Princess 72 yacht ";
             }
 
             //The color selected will determine the user's transportation
             //After determining the user's favorite color, I needed to determine
             //what type of transportation they have.  Also to mix things up, I used
             //the switch statement here.
+            string transportation;
             switch (lowerCaseUserFavColor)
             {
                 case "red":
-                    Console.Write("and a sports car.");
+                    transportation = "sports car.";
                     break;
                 case "orange":
-                    Console.Write("and a skateboard.\n");
+                    transportation = "skateboard.";
                     break;
                 case "yellow":
-                    Console.Write("and a banana seat bike.\n");
+                    transportation = "banana seat bike.";
                     break;
                 case "green":
-                    Console.Write("and a Honda Prius.\n");
+                    transportation = "Honda Prius.";
                     break;
                 case "blue":
-                    Console.Write("and a Learjet 60 airplane.\n");
+                    transportation = "Learjet 60 airplane.";
                     break;
                 case "indigo":
-                    Console.Write("and a helicopter.\n");
+                    transportation = "helicopter.";
                     break;
                 case "violet":
-                    Console.Write("and a Mini Cooper.\n");
+                    transportation = "Mini Cooper.";
                     break;
                 default:
-                    Console.Write("and you do not have any transportation.\n");
+                    transportation = "and you do not have any transportation.";
                     break;
             }
             Console.WriteLine();
+           
+
+            Console.WriteLine(firstName + " " + lastName + " will retire in " + userAgeString +
+            " with " + amountOfMoney + " in the bank, a vacation home in " + vacationLocation +
+            "and a " + transportation );
             Console.WriteLine("_______________________________");
         }
         public static void Quitter()
