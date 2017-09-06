@@ -14,7 +14,7 @@ namespace FortuneTeller
             Console.WriteLine("Welcome, I am Freddy THE Fabulous Fantastic Fortune Teller! \n" +
                 "\nI will tell you when you will retire.  \nI will tell you what mode of " +
                 "transportation that you currently use. \nI will tell you where your " +
-                "vacation house will be located. \nI will forsee the fortune that you " +
+                "vacation house will be located. \nI will foresee the fortune that you " +
                 "will acquire.");
             Console.WriteLine();
             Console.WriteLine("At any time in this program you may type \"Quit\" to end the session.");
